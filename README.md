@@ -33,7 +33,7 @@ There's a few special files in the hierarchy.
 Run this:
 
 ```sh
-/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/matkastner/dotfiles/HEAD/install.sh)"
+/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/matkastner/dotfiles/HEAD/setup.sh)"
 ```
 
 OR

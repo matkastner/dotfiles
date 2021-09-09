@@ -26,3 +26,13 @@ do
 done
 
 unset config_files
+
+function chpwd {
+  set_python_version
+  set_node_version
+  set_java_version
+}
+
+set_python_version
+set_node_version
+set_java_version

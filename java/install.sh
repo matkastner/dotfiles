@@ -1,5 +1,5 @@
-if ! brew list | grep adoptopenjdk/openjdk/adoptopenjdk8 > /dev/null
+if ! brew list | grep adoptopenjdk8 > /dev/null
 then
-    echo "› installing adoptopenjdk/openjdk/adoptopenjdk8"
+    echo "› brew install adoptopenjdk/openjdk/adoptopenjdk8"
     brew install adoptopenjdk/openjdk/adoptopenjdk8
 fi

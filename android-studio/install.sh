@@ -1,4 +1,8 @@
-brew install android-studio
+if ! brew list | grep android-studio > /dev/null
+then
+    echo "› installing android-studio"
+    brew install android-studio
+fi
 
 if [ -f ~/Library/Android/sdk/tools/bin/sdkmanager ]
 then

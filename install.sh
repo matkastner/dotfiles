@@ -5,7 +5,7 @@ fi
 
 if [ -d ~/.dotfiles ];
 then
-    git pull --ff-only && "dotfiles synced"
+    git pull --ff-only
 else
     git clone https://github.com/matkastner/dotfiles.git ~/.dotfiles
 fi

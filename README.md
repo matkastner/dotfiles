@@ -33,6 +33,12 @@ There's a few special files in the hierarchy.
 Run this:
 
 ```sh
+/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/matkastner/dotfiles/HEAD/install.sh)"
+```
+
+OR
+
+```sh
 git clone https://github.com/matkastner/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap

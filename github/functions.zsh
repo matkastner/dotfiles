@@ -22,14 +22,14 @@ get_repos() {
     mkdir -p ~/Code/dabapps
     cd ~/Code/dabapps
 
-    for repo in $(gh repo list dabapps --limit 5 --json name | jq -r '.[].name' | grep -i "${1}")
+    for repo in $(gh repo list dabapps --json nameWithOwner | jq -r '.[].name' | grep -i "${1}")
     do
         if [ -d ${repo} ]
         then
             echo "Skipping ${repo}..."
         else
             echo "Cloning ${repo}..."
-            gh repo clone dabapps/${repo}
+            gh repo clone ${repo}
         fi
     done
 

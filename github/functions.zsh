@@ -1,18 +1,3 @@
-
-sync_workspaces() {
-    mkdir -p ~/Workspaces
-    cd ~/.dotfiles
-    git pull --ff-only
-
-    cp -a ~/Workspaces/*.code-workspace ~/.dotfiles/github/workspaces
-    cp -a ~/.dotfiles/github/workspaces/*.code-workspace ~/Workspaces
-
-    git add github/workspaces/*.code-workspace
-    git commit -m "Syncing workspaces"
-    git push
-    cd -
-}
-
 get_repos() {
     if ! gh auth status
     then
@@ -36,8 +21,4 @@ get_repos() {
     done
 
     cd -
-
-    sync_workspaces
-
-    open ~/Workspaces/*${1}*.code-workspace
 }

@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "path": "../Code/dabapps/brightonfringe-app"
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#9b52b7",
+      "activityBar.activeBorder": "#bda461",
+      "activityBar.background": "#9b52b7",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#bda461",
+      "activityBarBadge.foreground": "#15202b",
+      "statusBar.background": "#7f3f97",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#9b52b7",
+      "titleBar.activeBackground": "#7f3f97",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#7f3f9799",
+      "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#7f3f97"
+  }
+}

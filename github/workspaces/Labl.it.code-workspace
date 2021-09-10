@@ -1,0 +1,35 @@
+{
+  "folders": [
+    {
+      "path": "../Code/dabapps/lablit-app"
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#45A1F7",
+      "activityBar.activeBorder": "#F59E0B",
+      "activityBar.background": "#45A1F7",
+      "activityBar.foreground": "#003366",
+      "activityBar.inactiveForeground": "#00336699",
+      "activityBarBadge.background": "#F59E0B",
+      "activityBarBadge.foreground": "#000000",
+      "statusBar.background": "#003366",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#F59E0B",
+      "titleBar.activeBackground": "#38BDF8",
+      "titleBar.activeForeground": "#000000",
+      "titleBar.inactiveBackground": "#38BDF899",
+      "titleBar.inactiveForeground": "#00000099"
+    },
+    "editor.defaultFormatter": "numso.prettier-standard-vscode",
+    "standard.enable": true,
+    "standard.engine": "ts-standard",
+    "standard.autoFixOnSave": true,
+    "standard.usePackageJson": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    },
+    "editor.formatOnSave": true
+  }
+}

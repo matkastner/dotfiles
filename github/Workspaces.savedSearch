@@ -68,11 +68,11 @@
 			<key>ShowStatusBar</key>
 			<false/>
 			<key>ShowTabView</key>
-			<true/>
+			<false/>
 			<key>ShowToolbar</key>
 			<true/>
 			<key>WindowBounds</key>
-			<string>{{-1466, 454}, {920, 436}}</string>
+			<string>{{260, 346}, {920, 436}}</string>
 		</dict>
 	</dict>
 </dict>

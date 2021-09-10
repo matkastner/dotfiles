@@ -17,18 +17,42 @@ pick_android_device() {
   echo "${default_android_device// /_}"
 }
 
-start_android_device() {
+pick_ios_device() {
+  if [ ! -f .ios_devices ];
+  then
+    xcrun simctl shutdown all
+    echo "$(xcrun xctrace list devices | grep iPhone | cut -d"(" -f1 | sort -R | sed -e 's/[[:space:]]*$//')" > .ios_devices
+  fi
+
+  random_device="$(cat ios_devices | head -n 1)"
+  echo "${IOS_DEVICE:-"${random_device}"}"
+}
+
+emu() {
   android_device="$(pick_android_device)"
 
-  # if [ "${1}" == "reset" ];
-  # then
-  #   adb emu kill
-  #   echo "Starting a fresh ${android_device//_/ }"
-  #   emulator -wipe-data -no-snapshot-load "@${android_device}" &
-  # else
+  if [ "${1}" = "reset" ];
+  then
+    adb emu kill
+    echo "Starting a fresh ${android_device//_/ }"
+    emulator -wipe-data -no-snapshot-load "@${android_device}" &
+  else
     echo "Restoring a ${android_device//_/ }"
     emulator "@${android_device}"
-  # fi
+  fi
+}
+
+sim() {
+  ios_device="$(pick_ios_device)"
+
+  if [ "${1}" = "reset" ];
+  then
+    xcrun simctl shutdown "${ios_device}"
+    xcrun simctl erase "${ios_device}"
+  fi
+
+  echo "Starting a ${ios_device}"
+  xcrun simctl boot "${ios_device}"
 }
 
 create_gif_from_video() {
@@ -130,15 +154,4 @@ srad() {
   rm .android_devices
   adb emu kill
   start_android_device
-}
-
-pick_ios_device() {
-  if [ ! -f ios_devices ];
-  then
-    xcrun simctl shutdown all
-    echo "$(xcrun instruments -s devices | grep iPhone | grep Simulator | cut -d"(" -f1 | sort -R | sed -e 's/[[:space:]]*$//')" > ios_devices
-  fi
-
-  random_device="$(cat ios_devices | head -n 1)"
-  echo "${IOS_DEVICE:-"${random_device}"}"
 }

@@ -1,5 +1,5 @@
 if ! brew list | grep crab > /dev/null
 then
-    echo "› installing crab"
-    brew install crab
+    echo "brew install dabapps/tap/crab"
+    brew install dabapps/tap/crab
 fi

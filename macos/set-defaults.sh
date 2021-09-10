@@ -1,1 +1,1 @@
-## Defaults can go here
+defaults write -g com.apple.mouse.scaling 3

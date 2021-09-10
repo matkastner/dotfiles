@@ -33,3 +33,21 @@ then
     echo "› brew install zoom"
     brew install zoom
 fi
+
+if ! brew list | grep brave-browser > /dev/null
+then
+    echo "› brew install brave-browser"
+    brew install brave-browser
+fi
+
+if ! brew list | grep google-chrome > /dev/null
+then
+    echo "› brew install google-chrome"
+    brew install google-chrome
+fi
+
+if ! brew list | grep firefox > /dev/null
+then
+    echo "› brew install firefox"
+    brew install firefox
+fi

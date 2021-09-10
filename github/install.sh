@@ -19,3 +19,4 @@ fi
 cp -a ~/.dotfiles/github/Workspaces.savedSearch $HOME
 mysides remove Workspaces
 mysides add Workspaces file://$HOME/Workspaces.savedSearch
+cp -a ~/.dotfiles/github/workspaces/*.code-workspace ~/Workspaces

@@ -16,9 +16,6 @@ then
     brew install mysides
 fi
 
+cp -a ~/.dotfiles/github/Workspaces.savedSearch $HOME
 mysides remove Workspaces
-
-if [ -f "$HOME/Dropbox (Personal)/Workspaces.savedSearch" ]
-then
-    mysides add Workspaces "file://$HOME/Dropbox (Personal)/Workspaces.savedSearch"
-fi
+mysides add Workspaces file://$HOME/Workspaces.savedSearch

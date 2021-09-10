@@ -4,8 +4,8 @@ sync_workspaces() {
     cd ~/.dotfiles
     git pull --ff-only
 
-    cp ~/Workspaces/*.code-workspace ~/.dotfiles/github/workspaces
-    cp ~/.dotfiles/github/workspaces/*.code-workspace ~/Workspaces
+    cp -a ~/Workspaces/*.code-workspace ~/.dotfiles/github/workspaces
+    cp -a ~/.dotfiles/github/workspaces/*.code-workspace ~/Workspaces
 
     git add github/workspaces/*.code-workspace
     git commit -m "Syncing workspaces"

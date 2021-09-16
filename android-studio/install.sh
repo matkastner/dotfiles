@@ -26,3 +26,5 @@ then
 
     avdmanager create avd -n dabapps -d "pixel_xl" -k "system-images;android-29;google_apis;x86" --force
 fi
+
+cp ~/.dotfiles/android-studio/install-files/com.mat.wakedevices.plist ~/Library/LaunchAgents

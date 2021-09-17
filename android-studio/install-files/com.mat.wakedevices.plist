@@ -15,10 +15,10 @@
   <key>Nice</key>
   <integer>1</integer>
 
-  <key>StartInterval</key>
-  <integer>15</integer>
-
   <key>RunAtLoad</key>
+  <true/>
+
+  <key>KeepAlive</key>
   <true/>
 
   <key>StandardErrorPath</key>

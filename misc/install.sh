@@ -51,3 +51,10 @@ then
     echo "› brew install firefox"
     brew install firefox
 fi
+
+
+if ! brew list | grep trello > /dev/null
+then
+    echo "› brew install trello"
+    brew install trello
+fi

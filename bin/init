@@ -1,1 +1,0 @@
-echo "VIRTUAL_HOST=$(basename $PWD).localhost" >> .env

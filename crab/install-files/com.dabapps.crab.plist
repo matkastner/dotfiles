@@ -3,22 +3,21 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.mat.wakedevices</string>
+  <string>com.dabapps.crab</string>
 
   <key>ProgramArguments</key>
   <array>
-    <string>/bin/bash</string>
-    <string>-c</string>
-    <string>/Users/mat/.dotfiles/bin/wakedevices</string>
+    <string>/usr/local/bin/crab</string>
+    <string>router</string>
   </array>
 
   <key>RunAtLoad</key>
   <true/>
 
   <key>StandardErrorPath</key>
-  <string>/tmp/com.mat.wakedevices.err</string>
+  <string>/tmp/com.dabapps.crab.err</string>
 
   <key>StandardOutPath</key>
-  <string>/tmp/com.mat.wakedevices.out</string>
+  <string>/tmp/com.dabapps.crab.out</string>
 </dict>
 </plist>

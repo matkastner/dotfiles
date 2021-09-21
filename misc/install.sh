@@ -51,3 +51,9 @@ then
     echo "› brew install firefox"
     brew install firefox
 fi
+
+if ! brew list | grep microsoft-office > /dev/null
+then
+    echo "› brew install microsoft-office"
+    brew install microsoft-office
+fi

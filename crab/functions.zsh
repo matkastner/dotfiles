@@ -5,6 +5,10 @@ set_env() {
     mv /tmp/.env ${ENVFILE-.env}
 }
 
+crabopen() {
+    crab zsh -c 'open -a "Google Chrome" "${SITE_URL}"'
+}
+
 crabinit() {
     PROJECT_NAME="$(basename $PWD)"
 

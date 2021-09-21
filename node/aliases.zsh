@@ -1,0 +1,8 @@
+alias n='npm'
+alias nr='n run'
+alias nrt='nr tests'
+alias nrw='nr watch-js'
+alias nrl='nr lint'
+alias nrb='nr build'
+alias nt='n test'
+alias ni='n install'

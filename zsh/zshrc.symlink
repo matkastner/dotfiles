@@ -12,6 +12,13 @@ do
   source $file
 done
 
+# load the completion files
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  echo "Sourcing ${file}..."
+  source $file
+done
+
 unset config_files
 
 function chpwd {

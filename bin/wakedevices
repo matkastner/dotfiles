@@ -9,9 +9,31 @@ do
     while read line <&3
     do
         device_id=$(echo $line | cut -d' ' -f1)
-        echo "Waking ${device_id}..."
-        ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input keyevent KEYCODE_WAKEUP
-        ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input keyevent mouse
+
+        screen_state=$(~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell dumpsys nfc | grep 'mScreenState=' | cut -d'=' -f2)
+        echo "${device_id} is ${screen_state}"
+
+        if [[ $screen_state == "ON_UNLOCKED" ]]
+        then
+            ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input keyevent mouse
+        elif [[ $screen_state == "ON_LOCKED" ]]
+        then
+            ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input touchscreen swipe 530 1420 530 1120
+            ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input text 0416
+            ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input keyevent 66
+        else
+            ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input keyevent KEYCODE_WAKEUP
+
+            sleep 1
+            screen_state=$(~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell dumpsys nfc | grep 'mScreenState=' | cut -d'=' -f2)
+
+            if [[ $screen_state == "ON_LOCKED" ]]
+            then
+                ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input touchscreen swipe 530 1420 530 1120
+                ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input text 0416
+                ~/Library/Android/sdk/platform-tools/adb -s ${device_id} shell input keyevent 66
+            fi
+        fi
     done 3< <(~/Library/Android/sdk/platform-tools/adb devices | grep -v 'List of devices attached' | grep .)
 
     sleep 15

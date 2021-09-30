@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#
+# Keeps all adb devices awake while running
+
+screenshots_dir=~/Downloads
+iso_date=$(date "+%Y-%m-%dT%H-%M-%S")
+
+file-to-clipboard() {
+    osascript \
+        -e 'on run args' \
+        -e 'set the clipboard to POSIX file (first item of args)' \
+        -e end \
+        "$@"
+}
+
+
+while read line <&3
+do
+    device_id=$(echo $line | cut -d' ' -f1)
+    screenshot_file="$screenshots_dir/${device_id}-${iso_date}.png"
+
+     ~/Library/Android/sdk/platform-tools/adb -s ${device_id} exec-out screencap -p > "${screenshot_file}"
+     file-to-clipboard "${screenshot_file}"
+     echo "${screenshot_file}"
+done 3< <(~/Library/Android/sdk/platform-tools/adb devices | grep -v 'List of devices attached' | grep .)

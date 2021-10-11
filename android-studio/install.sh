@@ -1,3 +1,5 @@
+~/.dotfiles/java/install.sh
+
 if ! brew list | grep android-studio > /dev/null
 then
     echo "› brew install android-studio"

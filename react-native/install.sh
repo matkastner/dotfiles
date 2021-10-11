@@ -9,6 +9,12 @@ then
     brew install watchman
 fi
 
+if ! brew list | grep cocoapods > /dev/null
+then
+    echo "› brew install cocoapods"
+    brew install cocoapods
+fi
+
 if ! brew list | grep idb-companion > /dev/null
 then
     echo "› brew install facebook/fb/idb-companion"

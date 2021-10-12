@@ -4,4 +4,4 @@ then
     brew install dabapps/tap/crab
 fi
 
-sudo cp ~/.dotfiles/crab/install-files/com.dabapps.crab.plist /Library/LaunchDaemons
+brew services start crab

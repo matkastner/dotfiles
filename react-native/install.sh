@@ -15,11 +15,12 @@ then
     brew install cocoapods
 fi
 
-if ! brew list | grep idb-companion > /dev/null
-then
-    echo "› brew install facebook/fb/idb-companion"
-    brew install facebook/fb/idb-companion
-fi
+# Doesn't work on m1!
+# if ! brew list | grep idb-companion > /dev/null
+# then
+#     echo "› brew install facebook/fb/idb-companion"
+#     brew install facebook/fb/idb-companion
+# fi
 
 if ! brew list | grep flipper > /dev/null
 then

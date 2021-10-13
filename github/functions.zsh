@@ -4,13 +4,16 @@ get_repos() {
         gh auth login
     fi
 
+    curr_dir=$pwd
+
     mkdir -p ~/Code/dabapps
-    cd ~/Code/dabapps
 
     search="$(echo "${1}" | tr '[:upper:]' '[:lower:]')"
 
     for repo in $(gh repo list dabapps -L 500 --json name -q ".[].name | select(contains(\"${search}\"))")
     do
+        cd ~/Code/dabapps
+
         if [ -d ${repo} ]
         then
             echo "Skipping ${repo}..."
@@ -18,7 +21,10 @@ get_repos() {
             echo "Cloning ${repo}..."
             gh repo clone dabapps/${repo}
         fi
+
+        cd ${repo}
+        nvm install && npm install
     done
 
-    cd -
+    cd $curr_dir
 }

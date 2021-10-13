@@ -5,6 +5,14 @@ kill_simulators() {
   xcrun simctl shutdown all > /dev/null
 }
 
+xc() {
+  open -a "Xcode" ios/*.xcworkspace
+}
+
+as() {
+  open -a "Android Studio" android
+}
+
 pick_android_device() {
   if [ ! -f .android_devices ];
   then

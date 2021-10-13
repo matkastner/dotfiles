@@ -23,7 +23,14 @@ get_repos() {
         fi
 
         cd ${repo}
+        echo 16 > .nvmrc
         nvm install && npm install
+
+        if [ -d ios ]
+        then
+            npm install pod-install --save-dev
+            npx pod-install
+        fi
     done
 
     cd $curr_dir

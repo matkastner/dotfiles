@@ -1,8 +1,6 @@
-if ! brew list | grep adoptopenjdk8 > /dev/null
-then
-    echo "› brew install adoptopenjdk/openjdk/adoptopenjdk8"
-    brew install adoptopenjdk/openjdk/adoptopenjdk8
-fi
+echo "› brew install openjdk adoptopenjdk/openjdk/adoptopenjdk11 adoptopenjdk/openjdk/adoptopenjdk8"
+brew install openjdk adoptopenjdk/openjdk/adoptopenjdk11 adoptopenjdk/openjdk/adoptopenjdk8
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 if ! brew list | grep jenv > /dev/null
 then

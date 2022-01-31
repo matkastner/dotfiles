@@ -15,7 +15,7 @@ then
 
     yes | sdkmanager --licenses
     sdkmanager --update
-    sdkmanager "platforms;android-29" "system-images;android-29;default;x86_64" "system-images;android-29;google_apis;x86"
+    sdkmanager "platforms;android-29" "system-images;android-29;default;arm64"
     sdkmanager "cmdline-tools;latest" "build-tools;29.0.2"
 fi
 
@@ -26,7 +26,7 @@ then
         jenv local 1.8
     fi
 
-    avdmanager create avd -n dabapps -d "pixel_xl" -k "system-images;android-29;google_apis;x86" --force
+    avdmanager create avd -n dabapps -d "pixel_xl" -k "system-images;android-29;google_apis;arm64" --force
 fi
 
 cp ~/.dotfiles/android-studio/install-files/com.mat.wakedevices.plist ~/Library/LaunchAgents
